@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    border-radius: 7px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(141, 137, 137);
+}
+
+.navbar {
+    background-color: rgb(51, 53, 53);
+}
+
+.container {
+    margin-top: 5rem;
+}
+
+.jumbotron {
+    border-radius: 7px;
+    margin: auto;
+}
+
+#left, #right {
+    background-color: rgb(179, 171, 158);
+    text-align: center;
+}
+

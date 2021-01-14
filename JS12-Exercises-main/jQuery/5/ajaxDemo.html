@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Ajax Demo</title>
+</head>
+<body>
+    <section class="only-demo">
+        <form id="ajax_form" action="form_action.php">
+            <label for="name">Name :</label>
+                <input name="name" id="name" type="text" />
+            <label for="email">Email :</label>
+                <input name="email" id="email" type="text" />
+                <input type="submit" value="Submit" />
+            </form>
+            <script>
+                $(document).ready(function(){
+                    $('#ajax_form').submit(function(event){
+                        event.preventDefault();
+                    
+                        const $form = $(this);
+                    
+                            $.ajax({
+                                type: 'POST',
+                                url: $form.attr('action'),
+                                data: $form.serialize(),
+                                   success: function(data) {
+                                    // Do something with the response
+                                },
+                                error: function(error) {
+                                    // Do something with the error
+                                }
+                        });
+                    });
+                })
+
+            </script>
+
+    </section>
+    <section class="not-demo">
+        <button type="button" class="btn">Click me!</button>
+        <p class="text">Replace me!!</p>
+    </section>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/ajax.js"></script>
+   
+</body>
+</html>

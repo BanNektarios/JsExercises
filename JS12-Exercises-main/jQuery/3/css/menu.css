@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.black {
+    background-color: black;
+    color: aliceblue;
+}
+
+.white {
+    background-color: aliceblue;
+    color: black;
+}
+
+
+* {
+  margin:0;
+  padding:0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  list-style: none;
+}
+
+h1, h2 {
+    text-align: center;  
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 2.5em;
+  
+  margin-top: 5rem;
+}
+
+.wrapper {
+  width:400px;
+  margin:30px auto;
+  cursor:pointer;
+}
+
+.main-nav {
+  position:relative;
+  border:1px solid rgba(0, 0, 0 , 0.2);
+  padding:15px;
+  background: rgba(98, 107, 103, 0.9);
+  color: #fefefe;
+}
+
+.main-nav:hover {
+  background: rgba(184, 178, 178, 0.78);
+}
+
+.main-nav > span {
+  position:absolute;
+  top: 17px;
+  right:20px;
+  cursor:pointer;
+}
+
+ul {
+  display:none;
+  margin-top:-1px;
+  background: rgba(0, 0, 0, 0.78);
+  color: #fefefe;
+}
+
+li {
+  border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+
+a, a:visited {
+  text-decoration:none;
+  padding-left:0;
+  color: #fefefe;
+  padding:15px;
+  display:block;
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+
+a:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+
+#wrap {
+    text-align: center;
+    margin-top: 5rem;
+  }
+  
+  
+  #wrap a {
+      font-size: 1.2rem;
+      padding: 0.75rem;
+      background: rgba(0, 0, 0, 0.78);
+      color: #fefefe;
+      -webkit-transition: .25s ease;
+              transition: .25s ease;
+  }
+  
+  #popup {
+      display: none;
+      position: absolute;
+      z-index: 1000;
+      text-align: center;
+      top:50%;
+      left:50%;
+      margin:-100px 0 0 -150px;
+      background:#fff;
+      width:240px;
+      height:200px;
+      padding:30px;
+      border: 1px solid black;
+  }
+  
+  #popup h2 {
+      font-size:36px;
+      color:#000;
+  }
+  
+  #popup a{
+      font-size:16px;
+      color:#000;
+      text-transform:uppercase;
+      -webkit-transition: .25s ease;
+              transition: .25s ease;
+  }
+  
+  #wrap a:hover {
+      background: rgba(0, 0, 0, 0.9);
+  }
+  
+  #popup a:hover {
+      text-decoration: underline;
+  }
+  
+  
