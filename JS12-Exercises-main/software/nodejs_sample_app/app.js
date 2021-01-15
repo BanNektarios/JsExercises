@@ -1,7 +1,9 @@
 const mysql2 = require('mysql2');
 const http = require('http');
-const http_status = require('http-status-codes')
+const http_status = require('http-status-codes');
+const { Http2ServerRequest } = require('http2');
 
+var ulr;
 // how to connect to a DB and show on console / web page
 
 var local_dbhost = {
@@ -63,6 +65,7 @@ connection.connect((err) => {
                     1nd Way --> Ισως αμα πετυχαινει τα cases να βαζει τα σωστα properties και να μην
                     βαζει τυφλα τα στις θεσεις [χ] σε αλλες τιμες
                 */
+                console.log(userResult.firstname)
                 res.writeHead(http_status.OK, { 'Content-type': 'text/html' });
                 res.write(`<!DOCTYPE html><html lang = "en" ><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body>`)
                 switch (true) {
@@ -71,6 +74,9 @@ connection.connect((err) => {
                     case Object.keys(userResult)[2] == 'lastname': res.write(`<p>Last Name: ${Object.values(userResult)[2].toString()}</p>`);
                     case Object.keys(userResult)[3] == 'telephone': res.write(`<p>Telephone: ${Object.values(userResult)[4].toString()}</p>`);
                 }
+                res.write(`<p>Number of path variables  ${req.method} ${req.url} </p>`)
+                url = req.url
+                printUrl(url)
                 res.write(`</body></html>`)
 
                 // 2nd way --> Ειναι πολυ hard-coded και δεν με τρελενει, εξου και η απο πανω λυση
@@ -87,9 +93,8 @@ connection.connect((err) => {
 
 });
 
-for (const [key, value] in userResult) {
-    if (Object.hasOwnProperty.call(userResult, [key, value])) {
-        const result1 = userResult[[key, value]];
-        console.log(result1)
-    }
+function printUrl(url) {
+    console.log(url);
+    return url;
+
 }
