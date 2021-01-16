@@ -29,14 +29,14 @@ var addStudent = "INSERT INTO `cb12ptjs`.`students` (`student_first`, `student_l
 
 // Make a connection to the database server
 // var connection = mysql2.createConnection(local_dbhost);
-var connection = mysql2.createConnection(remote_dbhost);
+var connection = mysql2.createConnection(local_dbhost);
 
 let userResult;
 connection.connect((err) => {
     if (err) { console.log(err) }
     else {
         console.log("Connected to database!");
-        connection.query(sql2, (ee, result, fields) => {
+        connection.query(sql, (ee, result, fields) => {
             //1st Way
             // console.log(`result is:`)
             // console.log(result)
@@ -65,18 +65,40 @@ connection.connect((err) => {
                     1nd Way --> Ισως αμα πετυχαινει τα cases να βαζει τα σωστα properties και να μην
                     βαζει τυφλα τα στις θεσεις [χ] σε αλλες τιμες
                 */
-                console.log(userResult.firstname)
+
+                //          --> Templating an HTML DOC -- Openning Tags Here <--
                 res.writeHead(http_status.OK, { 'Content-type': 'text/html' });
                 res.write(`<!DOCTYPE html><html lang = "en" ><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body>`)
-                switch (true) {
-                    case Object.keys(userResult)[0] == 'id': res.write(`<p>ID: ${Object.values(userResult)[0].toString()}</p>`);
-                    case Object.keys(userResult)[1] == 'firstname': res.write(`<p>First Name: ${Object.values(userResult)[1].toString()}</p>`);
-                    case Object.keys(userResult)[2] == 'lastname': res.write(`<p>Last Name: ${Object.values(userResult)[2].toString()}</p>`);
-                    case Object.keys(userResult)[3] == 'telephone': res.write(`<p>Telephone: ${Object.values(userResult)[4].toString()}</p>`);
-                }
-                res.write(`<p>Number of path variables  ${req.method} ${req.url} </p>`)
-                url = req.url
-                printUrl(url)
+
+
+                Object.keys(result).forEach(function(key){
+                    var row = result[key]
+                    res.write(`<p>ID: ${row.id}</p>`)
+                    res.write(`<p>First Name: ${row.firstName}</p>`)
+                    res.write(`<p>Last Name: ${row.lastName}</p>`)
+                    res.write(`<p>Telephone: ${row.telephone}</p>`)
+                    console.log(req.url)
+
+                })
+                console.log(req.url+"/")
+                
+
+
+
+
+
+
+                // switch (true) {
+                //     case Object.keys(userResult)[0] == 'id': res.write(`<p>ID: ${Object.values(userResult)[0].toString()}</p>`);
+                //     case Object.keys(userResult)[1] == 'firstname': res.write(`<p>First Name: ${Object.values(userResult)[1].toString()}</p>`);
+                //     case Object.keys(userResult)[2] == 'lastname': res.write(`<p>Last Name: ${Object.values(userResult)[2].toString()}</p>`);
+                //     case Object.keys(userResult)[3] == 'telephone': res.write(`<p>Telephone: ${Object.values(userResult)[4].toString()}</p>`);
+                // }
+                // res.write(`<p>Number of path variables  ${req.method} ${req.url} </p>`)
+                // url = req.url
+                // printUrl(url)
+
+                //          --> Tamplating Closing Tags Here <--
                 res.write(`</body></html>`)
 
                 // 2nd way --> Ειναι πολυ hard-coded και δεν με τρελενει, εξου και η απο πανω λυση
@@ -93,7 +115,7 @@ connection.connect((err) => {
 
 });
 
-function printUrl(url) {
+async function printUrl(url) {
     console.log(url);
     return url;
 
