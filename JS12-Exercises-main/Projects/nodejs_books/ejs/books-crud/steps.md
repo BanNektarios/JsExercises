@@ -36,3 +36,9 @@
 #   Implement the code for routes/books.js
 #   a) it captures the /books request
 #   b) connects to the database and does a SELECT query
+#   c) renders the view by sending the title and books rows (as a table) to the view
+
+# Step 13:
+#   created a new view ./views/books.ejs
+#   created partials folder
+#   a)execute a simple js code such as a for loop

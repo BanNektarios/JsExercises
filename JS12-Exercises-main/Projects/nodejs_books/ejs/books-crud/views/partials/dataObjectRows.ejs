@@ -1,0 +1,9 @@
+<div>
+    <% for( let i = 0; i < books.length; i++ ) { %>
+    <span>ID: <%= books[i].id %> </span>&nbsp
+    <span>Title: <em><%= books[i].title %> </em></span>&nbsp
+    <span>Author: <b><%= books[i].author %></b>  </span>&nbsp
+    <span>Created at: <time> <%= books[i].created_at %></time> </span>&nbsp
+    <span>Updated at: <time> <%= books[i].updated_at %></time> </span>&nbsp
+    <% } %>
+</div>
