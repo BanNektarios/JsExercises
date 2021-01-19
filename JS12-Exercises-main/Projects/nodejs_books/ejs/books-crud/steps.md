@@ -16,3 +16,18 @@
 # Step 5:
 #   run the app:
 #   $ DEBUG=books-crud:* & npm start
+
+# Step 7:
+
+
+# Step 8: 
+#   mkdir ./lib
+
+# Step 9:
+#   touch ./lib/db.js
+
+# Step 10: 
+#   npm i mysql2
+
+# Step 11:
+#   Create a connection and export it
