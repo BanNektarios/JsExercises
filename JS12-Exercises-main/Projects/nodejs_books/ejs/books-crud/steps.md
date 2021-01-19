@@ -31,3 +31,8 @@
 
 # Step 11:
 #   Create a connection and export it
+
+# Step 12:
+#   Implement the code for routes/books.js
+#   a) it captures the /books request
+#   b) connects to the database and does a SELECT query
