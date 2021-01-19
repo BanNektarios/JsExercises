@@ -10,10 +10,13 @@ router.get('/', function (req, res, next) {
             res.render('books', { title: 'Books - ERROR', books: 'Something seems wrong with your code' })
         } else {
             res.render('books', { title: 'Books', books: rows })
-
         }
-    })
+    });
+
     // res.render('books', { title: 'Books', books: 'Books-DB' });
 });
+router.get('/add', (req, res, next) => {
+  res.render('books_new', {title: 'Books - Add New'})
+})
 
 module.exports = router;
