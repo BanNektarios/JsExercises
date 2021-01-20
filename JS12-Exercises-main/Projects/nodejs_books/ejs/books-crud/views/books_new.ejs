@@ -1,9 +1,12 @@
-<%- include partials/htmlBoilerHead %> 
+<%- include partials/htmlBoilerHead %>
 
-<form action="">
+<h1>Add a book to the database</h1>
+<form action="" method="POST">
     <label for="title">Title</label>
-    <input type="text" placeholder="Title here" name="title">
+    <input type="text" placeholder="Title here" name="title" id="title">
     <label for="author">Author</label>
-    <input type="text" placeholder="Author here" name="author">
+    <input type="text" placeholder="Author here" name="author" id="author">
+    <input type="submit" value="Submit">
 </form>
-<%- include partials/htmlBoilerFooter %> 
+<div id="message"> <%= message %> </div>
+<%- include partials/htmlBoilerFooter %>
