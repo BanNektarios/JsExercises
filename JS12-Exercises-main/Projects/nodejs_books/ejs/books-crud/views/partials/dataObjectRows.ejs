@@ -5,17 +5,15 @@
     <span>Title: <em><%= books[i].title %> </em></span>&nbsp
     <span>Author: <b><%= books[i].author %></b> </span>&nbsp
 
-    <button><a href="http://localhost:3000/books/list/<%= books[i].id %>">DELETE</a></button>
+    <button><a href="http://localhost:3000/books/list/<%= books[i].id %>">Select</a></button>
 
     <br>
 
     <% } %>
-    <form method="POST" action="">
-        <button id="delete">Delete</button>
+    <form method="POST" action="?_method=DELETE">
+        <button type="submit" class="btn btn-danger">Delete</button>
     </form>
 </div>
-
-
 
 
 <div id="error">
