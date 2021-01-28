@@ -37,6 +37,7 @@ form {
     border-radius: 10px;
     display: grid;
     align-items: center;
+    letter-spacing: 2px;
 }
 
 form {
@@ -64,7 +65,11 @@ h1 {
 
 div {
     display: grid;
-    margin: 8px;
+    margin: 10px;
+}
+
+p {
+    font-size: 27px;
 }
 
 #submit {
