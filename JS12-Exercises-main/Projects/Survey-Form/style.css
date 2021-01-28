@@ -69,7 +69,8 @@ div {
 
 #submit {
     padding: 8px 0;
-    background-color: purple;
+    background-color: hsla(180, 70%, 40%, 1);
     color: white;
     border-radius: 7px;
+    font-size: large;
 }
