@@ -45,10 +45,11 @@ form {
     animation-name: slide;
     animation-duration: 800ms;
     animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.265, 2);
 }
 
 @keyframes slide {
-    from{top: -200px;}
+    from{top: -150px;}
     to{top: 0px;}
 }
 
@@ -74,7 +75,7 @@ p {
 
 #submit {
     padding: 8px 0;
-    background-color: hsla(180, 70%, 40%, 1);
+    background-color: hsla(180, 70%, 40%, 0.8);
     color: white;
     border-radius: 7px;
     font-size: large;
