@@ -1,38 +1,41 @@
-const mysql2 = require('mysql2');
+var mysql2 = require("mysql2");
 
 var connection = mysql2.createConnection({
-    host: 'localhost',
-    user: 'root',
-    database: 'private_school',
-    password: '1234',
-    port: '3306'
-})
+    host: 'ra1.anystream.eu',
+    user: 'cb12ptjs',
+    password: 'cb12ptjs',
+    database: 'cb12ptjs',
+    port: 5420
+});
 
-connection.connect((error) => {
+
+connection.connect(function (error) {
     if (error) {
-        console.log("");
+        console.log(error);
     } else {
-        console.log("CONNECTED to DATABASE");
+        console.log("Connected!");
     }
 });
 
-let query = connection.query("SELECT * FROM `private_school`.`students`;")
 
+const query = "SELECT * FROM books";
+connection.query(query, function (err, rows) {
+    books = rows;
+});
+
+var books
 
 module.exports = {
-    
+
     exits: {
         success: {
-            viewTemplatePath: 'books',
+            viewTemplatePath: 'books'
         }
+
     },
 
-    fn: async function (err,rows) {
+    fn: async function () {
 
-        // Respond with view.
-        return {
-            students: query
-        };
-
+        return { books }
     }
 }

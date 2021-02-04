@@ -1,8 +1,20 @@
-<div id="books">
-  <% for (let i = 0; i < students.length; i++) { %>
-  <ul>
-    <li><%= students[i].firstName %> </li>
-  </ul>
-  <% } %>
+  <% for(var i = 0; i < books.length; i++) { %>
+<div>
 
+  <span><%= books[i].id %></span>&nbsp;
+  <span>
+    <%= books[i].title %>
+  </span>&nbsp;
+  <span>
+    <%= books[i].author %>
+    <% console.log(books[i].author); %>
+  </span>&nbsp;
+  <span>
+    <%= books[i].created_at %>
+  </span>&nbsp;
+  <span>
+    <%= books[i].updated_at %>
+  </span>&nbsp;
 </div>
+  
+  <% } %>
