@@ -1,0 +1,14 @@
+<div id="products">PRODUCTS</div>
+<div id="list">
+  <ul>
+    <% for (let i = 0; i < products.length; i++)  { %>
+    <li><%= products[i].name %></li>
+    <li> <%= products[i].category %> </li>
+  </ul>
+  <% } %>
+</div>
+<form action="/products/new" method="POST">
+    name <input type="text" name="name" id="name">
+    caregory <input type="text" name="category" id="category">
+    <input type="submit" value="Submit">
+</form>
