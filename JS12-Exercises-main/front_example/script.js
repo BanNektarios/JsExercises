@@ -1,23 +1,39 @@
-const display = document.getElementById("display");
-
-
-const numberElement = document.getElementsByClassName("numbers");
-for (let i = 0; i < numberElement.length; i++) {
-    numberElement[i].addEventListener("click", function () {
-        alert(this.innerText)
+let number1 = 0
+let number2 = 0
+const display = document.getElementById('display');
+const numberElements = document.getElementsByClassName('numbers');
+for(let i = 0; i < numberElements.length; i++) {
+    numberElements[i].addEventListener('click', function() {
+        display.innerText += this.innerText
     })
 }
 
-const symbolElement = document.getElementsByClassName("symbols")
-for (let i = 0; i < symbolElement.length; i++) {
-    symbolElement[i].addEventListener("click", function () {
-        alert(this.innerText)
+const symbolElements = document.getElementsByClassName('symbols')
+for(let i = 0; i < symbolElements.length; i++) {
+    symbolElements[i].addEventListener('click', function() {
+        if(this.innerText == "AC") {
+            display.innerText = ""
+            number1 = 0
+            number2 = 0
+        }
     })
 }
 
-const calculationElement = document.getElementsByClassName("calculations")
-for (let i = 0; i < calculationElement.length; i++) {
-    calculationElement[i].addEventListener("click", function () {
-        alert(this.innerText)
+const calculationElements = document.getElementsByClassName('calculations')
+for(let i = 0; i < calculationElements.length; i++) {
+    calculationElements[i].addEventListener('click', function() {
+        if(this.innerText == "+") {
+            number1 = Number(display.innerText)
+            display.innerText = "" // ??? "+"
+            // alert(number1)
+        }
+        if(this.innerText == "=") {
+            number2 = Number(display.innerText)
+            display.innerText = ""
+            display.innerText = number1 + number2
+            number1 = 0
+            number2 = 0
+        }
     })
 }
+
