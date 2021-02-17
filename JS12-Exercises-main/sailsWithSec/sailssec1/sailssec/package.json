@@ -1,5 +1,5 @@
 {
-  "name": "sailssec-1",
+  "name": "sailssec",
   "private": true,
   "version": "0.0.0",
   "description": "a Sails application",
@@ -27,7 +27,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/anonymous node/sails user/sailssec-1.git"
+    "url": "git://github.com/anonymous node/sails user/sailssec.git"
   },
   "author": "anonymous node/sails user",
   "license": "",
