@@ -1,0 +1,19 @@
+@import './variables';
+
+header {
+
+
+    background: lightblue;
+    height: 100vh;
+    color: $textColor;
+    background: lightblue;
+
+    button {
+        background: $primatyBtn;
+
+        &::after {
+            content: "Hello";
+        }
+    }
+
+}
