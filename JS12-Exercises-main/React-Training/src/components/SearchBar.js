@@ -13,6 +13,7 @@ class SearchBar extends React.Component {
 
         //TODO: make sure we call
         // callback form main compontent
+        this.props.onFormSubmit(this.state.term)
     }
 
     render() {
